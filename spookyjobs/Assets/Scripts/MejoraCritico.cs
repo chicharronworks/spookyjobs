@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MejoraCritico : MonoBehaviour
 {
-    [SerializeField] bool mejoraActiva;
+    public bool mejoraActiva;
     bool mejoraAplicada;
     SistemaDeCritico critico;
     // Start is called before the first frame update

@@ -14,6 +14,7 @@ public class ControlDeSalas : MonoBehaviour
     int randomSala;
     public GameObject personaje;
     public GameObject spawnPersonaje;
+    public GameObject spawnPersonaje2;
     Movimiento mov;
     public GameObject puertaCerrada;
     public GameObject puertaAbierta;
@@ -65,24 +66,29 @@ public class ControlDeSalas : MonoBehaviour
         {
             case 1:
                 sala1 = Instantiate(modeloSala1, modeloSala1.transform.position, modeloSala1.transform.rotation);
+                personaje.transform.position = spawnPersonaje.transform.position;
                 break;
             case 2:
                 sala1 = Instantiate(modeloSala2, modeloSala2.transform.position, modeloSala2.transform.rotation);
+                personaje.transform.position = spawnPersonaje.transform.position;
                 break;
             case 3:
                 sala1 = Instantiate(modeloSala3, modeloSala3.transform.position, modeloSala3.transform.rotation);
+                personaje.transform.position = spawnPersonaje.transform.position;
                 break;
             case 4:
                 sala1 = Instantiate(modeloSala4, modeloSala4.transform.position, modeloSala4.transform.rotation);
+                personaje.transform.position = spawnPersonaje.transform.position;
                 break;
             case 5:
                 sala1 = Instantiate(modeloSala5, modeloSala5.transform.position, modeloSala5.transform.rotation);
+                personaje.transform.position = spawnPersonaje.transform.position;
                 break;
             case 6:
                 sala1 = Instantiate(modeloSala6, modeloSala6.transform.position, modeloSala6.transform.rotation);
+                personaje.transform.position = spawnPersonaje2.transform.position;
                 break;
         }
-        personaje.transform.position = spawnPersonaje.transform.position;
     }
     public void DestruirSala()
     {

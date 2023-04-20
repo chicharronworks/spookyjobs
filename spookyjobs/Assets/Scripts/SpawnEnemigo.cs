@@ -17,13 +17,15 @@ public class SpawnEnemigo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector3 v = new Vector3(transform.position.x, enemigo.transform.position.y, transform.position.z);
+        Vector3 v2 = new Vector3(transform.position.x, enemigo1.transform.position.y, transform.position.z);
         if (comienzoSpawn == 0)
         {
             contador += Time.deltaTime;
             if (contador >= 0.4f)
             {
-                Instantiate(enemigo, enemigo.transform.position, enemigo.transform.rotation);
-                Instantiate(enemigo1, enemigo1.transform.position, enemigo1.transform.rotation);
+                Instantiate(enemigo, v, enemigo.transform.rotation);
+                Instantiate(enemigo1, v2, enemigo1.transform.rotation);
                 comienzoSpawn = 1;
             }
         }

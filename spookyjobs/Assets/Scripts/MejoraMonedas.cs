@@ -5,7 +5,7 @@ using UnityEngine;
 public class MejoraMonedas : MonoBehaviour
 {
     public float multiplicador;
-    [SerializeField] bool MasDosMonedas;
+    public bool MasDosMonedas;
     // Start is called before the first frame update
     void Start()
     {

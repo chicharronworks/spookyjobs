@@ -12,7 +12,6 @@ public class VidaEnemigo : MonoBehaviour
     public Vector2 hotspot;
     public float contadorVeneno;
     public bool envenenado;
-    public bool MejoraAtaque;
     public GameObject particulasVeneno;
     int ven;
     int pin;
@@ -25,9 +24,10 @@ public class VidaEnemigo : MonoBehaviour
     float contadorPinchos;
     public int contadorImpactosPicnchos;
     [SerializeField] int probabilidadVeneno;
-    [SerializeField] bool mejoraVeneno;
     bool impactado;
     bool hasidoenvenenado;
+    MejoraVeneno mejoradeveneno;
+    MejoraAtaque mejoradeataque;
 
     // Start is called before the first frame update
     void Start()
@@ -43,20 +43,20 @@ public class VidaEnemigo : MonoBehaviour
         contadorVeneno = 0f;
         vida = 3;
         shakeCamara = FindObjectOfType<shakeCamara>();
-        MejoraAtaque = false;
+        mejoradeataque = FindObjectOfType<MejoraAtaque>();
         tempesferaastral = 0f;
         mejorapinchos = false;
         pinchando = false;
         contadorPinchos = 0f;
         impactado = false;
         hasidoenvenenado = false;
-
+        mejoradeveneno = FindObjectOfType<MejoraVeneno>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (MejoraAtaque) {
+        if (mejoradeataque.mejoraactiva) {
             daño = 1.5f;
         } 
         else {
@@ -78,11 +78,11 @@ public class VidaEnemigo : MonoBehaviour
             Destroy(gameObject);
             Cursor.SetCursor(cursorNormal, hotspot, CursorMode.Auto);
         }
-        if (mejoraVeneno == true)
+        if (mejoradeveneno.mejoraveneno == true)
         {
             probabilidadVeneno = 20;
         }
-        if (mejoraVeneno == true && hasidoenvenenado == false)
+        if (mejoradeveneno == true && hasidoenvenenado == false)
         {
             if (envenenado == false)
             {

@@ -25,9 +25,9 @@ public class Vida : MonoBehaviour
     int critico;
     int critico1;
     int contadorcritico;
-    bool mejoraMedCorCriticoused;
+    public bool mejoraMedCorCriticoused;
     MejoraEscudo mejoraescudo;//Mejora escudo
-    [SerializeField] bool mejoraCorazonExtra; //Mejora corazón extra
+    public bool mejoraCorazonExtra; //Mejora corazón extra
     bool comienzoPartida; //Mejora corazón extra
     [SerializeField] GameObject corazon4;//Mejora corazón extra
     [SerializeField] GameObject medioCorazon4;//Mejora corazón extra
@@ -55,6 +55,7 @@ public class Vida : MonoBehaviour
         mejoraMedCorCriticoused = false;
         mejoraescudo = FindObjectOfType<MejoraEscudo>();//Mejora escudo
         mejoraCorazonExtra = false; //Mejora corazón extra
+        comienzoPartida = true;
     }
 
     // Update is called once per frame

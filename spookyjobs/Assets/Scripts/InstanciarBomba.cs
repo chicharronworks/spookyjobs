@@ -7,9 +7,11 @@ public class InstanciarBomba : MonoBehaviour
     public GameObject bomba;
     bool bombaDisponible;
     float contadorBomba;
+    public bool ObjetoBomba;
     // Start is called before the first frame update
     void Start()
     {
+        ObjetoBomba = false;
         contadorBomba = 5;
         bombaDisponible = true;
     }
@@ -17,19 +19,23 @@ public class InstanciarBomba : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bombaDisponible == false)
+        if(ObjetoBomba == true)
         {
-            contadorBomba -= Time.deltaTime;
-            if(contadorBomba <= 0)
+            if (bombaDisponible == false)
             {
-                bombaDisponible = true;
+                contadorBomba -= Time.deltaTime;
+                if (contadorBomba <= 0)
+                {
+                    bombaDisponible = true;
+                }
+            }
+            if ((Input.GetKey(KeyCode.E) || Input.GetButtonDown("R1") == true) && bombaDisponible == true)
+            {
+                bombaDisponible = false;
+                contadorBomba = 5;
+                Instantiate(bomba, transform.position, bomba.transform.rotation);
             }
         }
-        if((Input.GetKey(KeyCode.E)|| Input.GetButtonDown("R1") == true) && bombaDisponible == true)
-        {
-            bombaDisponible = false;
-            contadorBomba = 5;
-            Instantiate(bomba, transform.position, bomba.transform.rotation);
-        }
+       
     }
 }

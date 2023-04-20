@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MejoraMinion : MonoBehaviour
 {
-    [SerializeField] bool mejoraActiva;
+    public bool mejoraActiva;
     [SerializeField] GameObject minion;
     [SerializeField] GameObject personaje;
     public GameObject minionInstanciado;

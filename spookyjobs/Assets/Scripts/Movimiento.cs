@@ -27,6 +27,7 @@ public class Movimiento : MonoBehaviour
 	public GameObject particulasAndar;
 	Vector3 lp;
 	Vector3 ai;
+	public bool mejoraDash;
 	void Start()
 	{
 
@@ -37,6 +38,7 @@ public class Movimiento : MonoBehaviour
 		mando = false;
 		anim = modPers.GetComponent<Animator>();
 		particulasAndar.SetActive(false);
+		mejoraDash = false;
 	}
 
 	void Update()
@@ -139,11 +141,14 @@ public class Movimiento : MonoBehaviour
 		}
 		
 		timedash -= Time.deltaTime;
-		if (Input.GetKey(KeyCode.Space)||Input.GetButtonDown("L1") == true)
-		{
+		if(mejoraDash == true)
+        {
+			if (Input.GetKey(KeyCode.Space) || Input.GetButtonDown("L1") == true)
+			{
 
-			isd = true;
-			dash();
+				isd = true;
+				dash();
+			}
 		}
 		
 	}
