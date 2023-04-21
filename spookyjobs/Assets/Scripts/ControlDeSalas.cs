@@ -24,6 +24,7 @@ public class ControlDeSalas : MonoBehaviour
     public AudioSource source;
     public AudioClip puertaDesbloqueadaSonido;
     public CameraFade fadeCam;
+    GameObject[] pinchos;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,5 +94,10 @@ public class ControlDeSalas : MonoBehaviour
     public void DestruirSala()
     {
         Destroy(sala1);
+        pinchos = GameObject.FindGameObjectsWithTag("PinchosSuelo");
+        foreach(GameObject p in pinchos)
+        {
+            Destroy(p);
+        }
     }
 }

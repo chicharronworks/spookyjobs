@@ -19,6 +19,9 @@ TagManager:
   - InfoP
   - Pistola
   - SelecArma
+  - minion
+  - esferaastral
+  - PinchosSuelo
   layers:
   - Default
   - TransparentFX
