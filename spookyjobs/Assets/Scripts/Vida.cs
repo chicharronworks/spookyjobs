@@ -21,6 +21,7 @@ public class Vida : MonoBehaviour
     public float cooldownRegeneracion;
     public bool mejoraDefensa;
     public bool mejoraMedCorCritico;
+    public bool mejoraBotas;
     SistemaDeCritico sc;
     int critico;
     int critico1;
@@ -180,6 +181,7 @@ public class Vida : MonoBehaviour
             corazon1.SetActive(true);
             corazon4.SetActive(false); //Mejora corazón extra
             medioCorazon4.SetActive(false); //Mejora corazón extra
+            medioCorazon1.SetActive(false);
         }
         if (vida == 0.5)
         {
@@ -284,6 +286,14 @@ public class Vida : MonoBehaviour
             }
             StartCoroutine(shakeCamara.Shake());
             cooldownRegeneracion = 10f;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "PinchosSuelo"&& mejoraBotas==false)
+        {
+            vida -= 0.0625f;
+
         }
     }
     private void MejoraRegeneracionVida() {

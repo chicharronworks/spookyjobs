@@ -11,8 +11,7 @@ public class SpawnPinchosSuelo : MonoBehaviour
     int RandomPinchos;
     void Start()
     {
-        RandomPinchos = Random.Range(1, 4);
-        Debug.Log(RandomPinchos);
+        RandomPinchos = Random.Range(1, 6);
     }
 
     // Update is called once per frame
