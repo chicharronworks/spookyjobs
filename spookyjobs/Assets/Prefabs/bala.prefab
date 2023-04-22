@@ -98,9 +98,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c269023f3308ff469e57e7e7129b6d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidadDisparo: 5
-  disparorb: {fileID: 1878239957364032248}
-  cuboPist: {fileID: 0}
 --- !u!135 &5666793275299723702
 SphereCollider:
   m_ObjectHideFlags: 0
