@@ -19,6 +19,9 @@ TagManager:
   - InfoP
   - Pistola
   - SelecArma
+  - esferaastral
+  - minion
+  - fuego
   layers:
   - Default
   - TransparentFX

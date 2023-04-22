@@ -180,6 +180,7 @@ public class Vida : MonoBehaviour
             corazon1.SetActive(true);
             corazon4.SetActive(false); //Mejora corazón extra
             medioCorazon4.SetActive(false); //Mejora corazón extra
+            medioCorazon1.SetActive(false);
         }
         if (vida == 0.5)
         {
